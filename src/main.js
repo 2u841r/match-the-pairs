@@ -7,7 +7,8 @@ class MemoryGame {
     this.isProcessing = false;
     
     // Card symbols (emojis)
-    this.symbols = ['🐙', '📚', '🐱', '🐼', '🦝', '🐝', '🕷️', '💎'];
+    // this.symbols = ['🐙', '📚', '🐱', '🐼', '🦝', '🐝', '🕷️', '💎'];
+    this.symbols = ['🌹', '🌻', '🌷', '🌸', '🍉', '🍊', '🍍', '🍓'];
     
     this.init();
   }

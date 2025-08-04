@@ -4,13 +4,14 @@
   "version": "0.1.0",
   "identifier": "com.matchthepairs.app",
   "build": {
-    "frontendDist": "../src"
+    "frontendDist": "../src",
+    "removeUnusedCommands": true
   },
   "app": {
     "withGlobalTauri": true,
     "windows": [
       {
-        "title": "games",
+        "title": "Match The Pairs",
         "width": 800,
         "height": 600
       }
