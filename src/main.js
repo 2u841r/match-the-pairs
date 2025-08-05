@@ -7,6 +7,13 @@ class MemoryGame {
     this.isProcessing = false;
     this.selectedTheme = null;
 
+    // Sound effects
+    this.sounds = {
+      flip: new Audio('/assets/sounds/flip.wav'),
+      correct: new Audio('/assets/sounds/correct.wav'),
+      wrong: new Audio('/assets/sounds/wrong.mp3')
+    };
+
     // Theme definitions
     this.themes = {
       animals: ['🐈', '🐄', '🐒', '🦘', '🐘', '🦒', '🐪', '🐅'],
@@ -123,6 +130,7 @@ class MemoryGame {
 
     // Flip the card
     cardElement.classList.add('flipped');
+    this.playSound('flip');
     this.flippedCards.push({ index, element: cardElement });
 
     // Check for match when 2 cards are flipped
@@ -142,6 +150,7 @@ class MemoryGame {
 
     if (firstCard.symbol === secondCard.symbol) {
       // Match found
+      this.playSound('correct');
       setTimeout(() => {
         first.element.classList.add('matched');
         second.element.classList.add('matched');
@@ -160,12 +169,22 @@ class MemoryGame {
       }, 600);
     } else {
       // No match - flip cards back
+      this.playSound('wrong');
       setTimeout(() => {
         first.element.classList.remove('flipped');
         second.element.classList.remove('flipped');
         this.flippedCards = [];
         this.isProcessing = false;
       }, 1000);
+    }
+  }
+
+  playSound(soundName) {
+    if (this.sounds[soundName]) {
+      this.sounds[soundName].currentTime = 0; // Reset to start
+      this.sounds[soundName].play().catch(error => {
+        console.log('Sound play failed:', error);
+      });
     }
   }
 
