@@ -9,3 +9,4 @@ This template should help get you started developing with Tauri in vanilla HTML,
 
 
 ![](https://rs2.deno.dev/2u841r/match-the-pairs)
+<!-- ![](https://rs2.deno.dev/chart/2u841r/match-the-pairs) --> 
