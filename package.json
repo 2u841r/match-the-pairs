@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "tauri": "tauri",
+    "web": "vite dev ./src",
     "dev": "tauri dev",
     "build": "tauri build",
     "apk": "npm run tauri android build"
