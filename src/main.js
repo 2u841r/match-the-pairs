@@ -9,9 +9,9 @@ class MemoryGame {
 
     // Sound effects
     this.sounds = {
-      flip: new Audio('/assets/sounds/flip.wav'),
-      correct: new Audio('/assets/sounds/correct.wav'),
-      wrong: new Audio('/assets/sounds/wrong.mp3')
+      flip: new Audio('./sounds/flip.wav'),
+      correct: new Audio('./sounds/correct.wav'),
+      wrong: new Audio('./sounds/wrong.mp3')
     };
 
     // Theme definitions
